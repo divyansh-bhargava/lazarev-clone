@@ -209,12 +209,11 @@ function page8anime(){
         }       
     })
 }
-
-// nav()
-// page2anime()
-// page3anime()
-// page6anime()
-// page7anime()
+ nav()
+page2anime()
+page3anime()
+page6anime()
+page7anime()
 page8anime()
 
 
