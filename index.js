@@ -203,7 +203,7 @@ function page8anime(){
         scrollTrigger:{
             trigger:".scroll",
             scroller: "body",
-            start : "top 70%",
+            start : "top 60%",
             end: "top 18%",
             scrub: 2
         }       
