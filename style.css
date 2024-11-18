@@ -20,7 +20,7 @@ nav{
     align-items: center;
     position: fixed;
     width: 100%;
-    height: 9%;
+    height: 8%;
     padding: 3.5%;
     text-transform: uppercase;
     z-index: 10;
@@ -28,13 +28,14 @@ nav{
 
 nav h1{
     font-size: 1.9vw;
+    
 }
 
 .mid{
-    top: 13vh;
     display: flex;
     gap: 2vw;
-    align-items: flex-start;
+    padding: 4vh 0;
+    align-items: center;
     background-color: transparent;
 }
 
@@ -43,6 +44,10 @@ nav h1{
     background-color: transparent;
 }
 
+.mid div h3:hover{
+ color: #0DA34E;
+ transition: linear 0.3s;
+}
 
 .mid-ns {
     display: none;
@@ -67,13 +72,15 @@ nav button{
    width: 10vw;
    font-size: 1.9vh;
    border-style: none;
-   border-radius: 20px;
+   border-radius: 30px;
    background-color: #0DA34E;
    text-transform: uppercase;
    font-weight: 700 ;
    align-items: center;
    justify-content: center;
 }
+
+
 
 nav button svg{
     height: 6.5vh;
@@ -333,6 +340,11 @@ nav button svg{
     height: 90%;
     display: flex;
     justify-content: center;
+}
+
+.page4 .top h1{
+    width: 100%;
+    height: 100%;
 }
 
 .page4 .left{
