@@ -1,3 +1,4 @@
+
 function nav(){
     let navslider = document.querySelector(".navslider")
     let midns = document.querySelectorAll(".mid-ns div")
@@ -8,7 +9,7 @@ function nav(){
         
         t1.to(".navslider" ,{
             height:150,
-            duration:0.4,     
+            duration:0.35,     
         })
         
         t1.to(".mid-ns" , {
@@ -18,7 +19,8 @@ function nav(){
         t1.from(".mid-ns div" , {
             y:10,
             opacity:0,
-            stagger:0.1
+            stagger:0.1,
+            duration:0.65
         })
     })
     
@@ -27,24 +29,82 @@ function nav(){
         t1.to(".mid-ns div" , {
             y:-10 ,
             opacity:0,
-            stagger:0.1
+            stagger:0.1,
+            duration:0.3,
         })
     
         t1.to(".mid-ns" , {
-            display : "none"
+            display : "none",
+            duration:0.1
         }) 
     
         t1.set(".mid-ns div" , {
             opacity:1
         })
-    
-    
+
         t1.to(".navslider" ,{
-            height:0   })
+            height:0,
+            duration:0.3
+        })
+    },)
+}
+
+function page1anime(){
+    let tl = gsap.timeline();
+    tl.from("nav",{
+        y:-70,
+        opacity:0,
+        duration :0.6
     })
+
+    tl.from(".h11",{
+        x:-80,
+        opacity:0,
+        duration : 0.7
+    },"a")
+
+    tl.from(".h12",{
+        x:80,
+        opacity:0,
+        duration : 0.7
+    },"a")
+
+    tl.from(".page1 .content",{
+        opacity:0,
+    })
+
+    tl.from(".page1 .slider",{
+        y:20,
+        opacity:0
+    })
+
 }
 
 function page2anime(){
+
+    gsap.from(".page2 .left",{
+        x:-60,
+        opacity:0,
+        duration:1,
+        scrollTrigger:{
+            trigger : ".page2",
+            scroll : "body",
+            start : "top 65%"
+
+        }
+    })
+
+    gsap.from(".page2 .right",{
+        x:60,
+        opacity:0,
+        duration:1,
+        scrollTrigger:{
+            trigger : ".page2",
+            scroll : "body",
+            start : "top 65%"
+        }
+    })
+
     let box = document.querySelectorAll(".box")
  
     box.forEach(function(dets){
@@ -89,7 +149,55 @@ function page3anime(){
     })
 }
 
+function page4anime(){
+    gsap.from(".page4 .top .left ",{
+        y: 50,
+        opacity:0,
+        scrollTrigger :{
+            trigger:".page4 .top",
+            scroll: "body",
+            start: "top 70%"
+        }
+    })
+}
+
 function page6anime(){
+    gsap.from(".page6 .ai1 .left div .h2 h2",{
+        y:10,
+        opacity:0,
+        stagger:0.2,
+        duration : 0.5,
+        scrollTrigger :{
+            trigger:".page6 .ai1",
+            scroll: "body",
+            start: "top 75%"
+        }
+    })
+
+    gsap.from(".page6 .fintech .left div .h2 h2",{
+        y:10,
+        opacity:0,
+        stagger:0.2,
+        duration : 0.5,
+        scrollTrigger :{
+            trigger:".page6 .fintech",
+            scroll: "body",
+            start: "top 75%"
+        }
+    })
+
+    gsap.from(".page6 .web3 .left div .h2 h2",{
+        y:10,
+        opacity:0,
+        stagger:0.1,
+        duration : 0.5,
+        scrollTrigger :{
+            trigger:".page6 .web3",
+            scroll: "body",
+            start: "top 75%"
+        }
+    })
+
     let crt = document.querySelectorAll(".crt")
     let v = document.querySelectorAll("page6 ")
     crt.forEach((dets)=> { 
@@ -211,82 +319,25 @@ function page8anime(){
 
 }
 
-function btn1(){
-    let bn = document.addEventListener(".btn-n")
-    bn.addEventListener("mouseover",()=>{
-
-    })
-}
-
-function anime(){
-    let tl = gsap.timeline();
-    tl.from("nav",{
-        y:-70,
-        opacity:0,
-        duration :0.7
-    })
-
-    tl.from(".h11",{
-        x:-80,
-        opacity:0,
-        duration : 0.8
-    },"a")
-
-    tl.from(".h12",{
-        x:80,
-        opacity:0,
-        duration : 0.8
-    },"a")
-
-    tl.from(".page1 .content",{
-        opacity:0
-    })
-
-    tl.from(".page1 .slider",{
+function page9anime(){
+    gsap.from( ".share a" , {
         y:20,
-        opacity:0
-    })
-
-    gsap.from(".page2 .left",{
-        x:-60,
         opacity:0,
-        duration:1,
+        stagger: 0.2,
         scrollTrigger:{
-            trigger : ".page2",
-            scroll : "body",
-            markers:true,
-            start : "top 35%"
-
+            trigger:".page9",
+            scroll: "body",
+            start:"top 63%",
         }
-    })
-
-    gsap.from(".page2 .right",{
-        x:60,
-        opacity:0,
-        duration:1,
-        scrollTrigger:{
-            trigger : ".page2",
-            scroll : "body",
-            markers:true,
-            start : "top 35%"
-
-        }
-    })
-
-    gsap.from(".page4 .top .left h1 span",{
-        y:-50,
-        opacity:0.1,
-        stagger:1,
-    })
-
-
-    
+    } )
 }
 
-anime()
+page9anime()
 nav()
+page1anime()
 page2anime()
 page3anime()
+page4anime()
 page6anime()
 page7anime()
 page8anime()
